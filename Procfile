@@ -1,0 +1,1 @@
+web: gunnicorn hello:app --log-file=-
