@@ -33,7 +33,7 @@ def get_store(name):
 
 @app.route('/store')
 def get_stores():
-    return jsonify({'sotores': stores})
+    return jsonify({'stores': stores})
 
 
 @app.route('/store/<string:name>/item', methods=['POST'])
