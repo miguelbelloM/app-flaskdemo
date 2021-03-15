@@ -1,4 +1,4 @@
-from flask import Flask, app, jsonify, request
+from flask import Flask, app
 from flask_restful import Resource, Api
 
 app = Flask(__name__)
