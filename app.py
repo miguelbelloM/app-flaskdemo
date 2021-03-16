@@ -15,15 +15,6 @@ class Item(Resource):
         return {'item': None}, 404
     
     def post(self, name):
-        item = {
-            'name': name,
-            'price': 12.00
-        }
-        items.append(item)
-        return item, 201
-
-class ItemList(Resource):
-    def get(self):
         data = request.get_json(force=True)
         # Variables
         name = data['name']
@@ -36,4 +27,9 @@ class ItemList(Resource):
         items.append(item)
         return item, 201
 
+class ItemList(Resource):
+    def get(self):
+        return {'items': items}
+
 api.add_resource(Item, '/item/<string:name>')
+api.add_resource(ItemList, '/items')
