@@ -16,8 +16,8 @@ items = []
 class Item(Resource):
     @jwt_required()
     def get(self, name):
-        item = next(filter(lambda item: item['name'] == name, items), None)
-        return {'item': item}, 200 if item is item else 404
+        item = next(filter(lambda x: x['name'] == name, items), None)
+        return {'item': item}, 200 if item else 404
     
     def post(self, name):
         if next(filter(lambda item: item['name'] == name, items), None) is not None:
