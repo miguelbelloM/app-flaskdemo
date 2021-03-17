@@ -34,7 +34,7 @@ class Item(Resource):
         items.append(item)
         return item, 201
     
-    def delete(delf, name):
+    def delete(self, name):
         global items
         items = list(filter(lambda x: x['name'] != name, items))
         return {'message': 'item deleted'}
